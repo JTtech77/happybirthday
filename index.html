@@ -1,317 +1,178 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #fb0007; -webkit-text-stroke: #fb0007}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0f7001; -webkit-text-stroke: #0f7001}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #093c94; -webkit-text-stroke: #093c94}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #900112; -webkit-text-stroke: #900112}
-    span.s1 {font-kerning: none; background-color: #fffffe}
-    span.s2 {font-kerning: none; color: #fb0007; background-color: #fffffe; -webkit-text-stroke: 0px #fb0007}
-    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #fffffe; -webkit-text-stroke: 0px #2a2a2a}
-    span.s4 {font-kerning: none; color: #000000; background-color: #fffffe; -webkit-text-stroke: 0px #000000}
-    span.s5 {font-kerning: none; color: #0000ff; background-color: #fffffe; -webkit-text-stroke: 0px #0000ff}
-    span.s6 {font-kerning: none; color: #6b0001; background-color: #fffffe; -webkit-text-stroke: 0px #6b0001}
-    span.s7 {font-kerning: none; color: #137646; background-color: #fffffe; -webkit-text-stroke: 0px #137646}
-    span.s8 {font-kerning: none; color: #093c94; background-color: #fffffe; -webkit-text-stroke: 0px #093c94}
-    span.s9 {font-kerning: none; color: #900112; background-color: #fffffe; -webkit-text-stroke: 0px #900112}
-    span.s10 {font-kerning: none}
-    span.s11 {font-kerning: none; color: #0e6e6d; background-color: #fffffe; -webkit-text-stroke: 0px #0e6e6d}
-    span.s12 {font-kerning: none; color: #0f7001; background-color: #fffffe; -webkit-text-stroke: 0px #0f7001}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happybirthdayChen2026</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: 'Montserrat', sans-serif; background-color: #1a2f1c; }
+        .bg-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('snChen.png'); background-size: cover; background-position: center; z-index: 1; transition: filter 2s ease; }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(20, 40, 25, 0.65) 0%, rgba(10, 20, 15, 0.5) 100%); z-index: 2; }
+        .glass-card { position: absolute; z-index: 10; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.05); border-radius: 24px; width: 90%; max-width: 500px; padding: 2.5rem 2rem; text-align: center; color: white; display: flex; flex-direction: column; align-items: center; transition: opacity 1s ease, transform 1s ease, visibility 1s; }
+        .serif { font-family: 'Cormorant Garamond', serif; }
+        .fade-out { opacity: 0 !important; transform: translateY(-20px) !important; visibility: hidden; pointer-events: none; }
+        .fade-in { opacity: 1 !important; transform: translateY(0) !important; visibility: visible; }
+        .hidden-start { opacity: 0; transform: translateY(20px); visibility: hidden; }
+        .leaf { position: absolute; top: -50px; width: 12px; height: 12px; background: rgba(179, 212, 160, 0.4); border-radius: 0% 70% 0% 70%; z-index: 5; pointer-events: none; box-shadow: inset 0 0 4px rgba(255,255,255,0.2); animation: fall linear forwards; }
+        @keyframes fall { 0% { transform: translateY(-20px) rotate(0deg) translateX(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(105vh) rotate(360deg) translateX(50px); opacity: 0; } }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">html</span><span class="s4"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s5">"vi"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s4"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- CHỈNH SỬA TIÊU ĐỀ TRANG WEB (Hiển thị trên tab trình duyệt) Ở ĐÂY --&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">title</span><span class="s3">&gt;</span><span class="s1">happybirthdayChen2026</span><span class="s3">&lt;/</span><span class="s6">title</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Thư viện giao diện và hiệu ứng --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Phông chữ sang trọng --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.gstatic.com"</span><span class="s4"> </span><span class="s2">crossorigin</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Montserrat:wght@200;300;400&amp;display=swap"</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">body</span><span class="s1">, </span><span class="s6">html</span><span class="s1"> {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin:</span><span class="s1"> </span><span class="s7">0</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s7">0</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s7">100%</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s7">100%</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">overflow:</span><span class="s1"> </span><span class="s8">hidden</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s1"> </span><span class="s9">'Montserrat'</span><span class="s1">, </span><span class="s8">sans-serif</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#1a2f1c</span><span class="s4">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Ảnh nền phong cảnh */</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.bg-container</span><span class="s4"> {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">absolute</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">top:</span><span class="s1"> </span><span class="s7">0</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">left:</span><span class="s1"> </span><span class="s7">0</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s7">100%</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s7">100%</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-image:</span><span class="s4"> </span><span class="s8">url</span><span class="s4">(</span><span class="s9">‘snChen.png'</span><span class="s4">);</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-size:</span><span class="s4"> </span><span class="s8">cover</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-position:</span><span class="s4"> </span><span class="s8">center</span><span class="s4">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">z-index:</span><span class="s1"> </span><span class="s7">1</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transition:</span><span class="s1"> </span><span class="s8">filter</span><span class="s1"> </span><span class="s7">2s</span><span class="s1"> </span><span class="s8">ease</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Lớp phủ mờ màu xanh lá đậm */</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.overlay</span><span class="s1"> {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">absolute</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">top:</span><span class="s1"> </span><span class="s7">0</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">left:</span><span class="s1"> </span><span class="s7">0</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s7">100%</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s7">100%</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background:</span><span class="s1"> </span><span class="s8">linear-gradient(</span><span class="s7">135deg</span><span class="s1">, </span><span class="s8">rgba(</span><span class="s7">20</span><span class="s1">, </span><span class="s7">40</span><span class="s1">, </span><span class="s7">25</span><span class="s1">, </span><span class="s7">0.65</span><span class="s8">)</span><span class="s1"> </span><span class="s7">0%</span><span class="s1">, </span><span class="s8">rgba(</span><span class="s7">10</span><span class="s1">, </span><span class="s7">20</span><span class="s1">, </span><span class="s7">15</span><span class="s1">, </span><span class="s7">0.5</span><span class="s8">)</span><span class="s1"> </span><span class="s7">100%</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">z-index:</span><span class="s1"> </span><span class="s7">2</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Khung kính mờ (Glassmorphism) */</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.glass-card</span><span class="s4"> {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">absolute</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">z-index:</span><span class="s1"> </span><span class="s7">10</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background:</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s7">255</span><span class="s1">, </span><span class="s7">255</span><span class="s1">, </span><span class="s7">255</span><span class="s1">, </span><span class="s7">0.1</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">backdrop-filter:</span><span class="s4"> </span><span class="s8">blur(</span><span class="s7">16px</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">-webkit-backdrop-filter:</span><span class="s4"> </span><span class="s8">blur(</span><span class="s7">16px</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border:</span><span class="s1"> </span><span class="s7">1px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s7">255</span><span class="s1">, </span><span class="s7">255</span><span class="s1">, </span><span class="s7">255</span><span class="s1">, </span><span class="s7">0.2</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s7">0</span><span class="s1"> </span><span class="s7">25px</span><span class="s1"> </span><span class="s7">45px</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s7">0</span><span class="s1">, </span><span class="s7">0</span><span class="s1">, </span><span class="s7">0</span><span class="s1">, </span><span class="s7">0.2</span><span class="s8">)</span><span class="s1">, </span><span class="s8">inset</span><span class="s1"> </span><span class="s7">0</span><span class="s1"> </span><span class="s7">0</span><span class="s1"> </span><span class="s7">20px</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s7">255</span><span class="s1">, </span><span class="s7">255</span><span class="s1">, </span><span class="s7">255</span><span class="s1">, </span><span class="s7">0.05</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s7">24px</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s7">90%</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">max-width:</span><span class="s1"> </span><span class="s7">500px</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s7">2.5rem</span><span class="s1"> </span><span class="s7">2rem</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">text-align:</span><span class="s1"> </span><span class="s8">center</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s8">white</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">flex</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">flex-direction:</span><span class="s4"> </span><span class="s8">column</span><span class="s4">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">align-items:</span><span class="s1"> </span><span class="s8">center</span><span class="s1">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">transition:</span><span class="s4"> </span><span class="s1">opacity</span><span class="s4"> </span><span class="s7">1s</span><span class="s4"> </span><span class="s1">ease</span><span class="s4">, </span><span class="s1">transform</span><span class="s4"> </span><span class="s7">1s</span><span class="s4"> </span><span class="s1">ease</span><span class="s4">, </span><span class="s1">visibility</span><span class="s4"> </span><span class="s7">1s</span><span class="s4">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.serif</span><span class="s1"> {</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s4"> </span><span class="s1">'Cormorant Garamond'</span><span class="s4">, </span><span class="s8">serif</span><span class="s4">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Hiệu ứng ẩn/hiện mượt mà */</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.fade-out</span><span class="s1"> {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">opacity:</span><span class="s1"> </span><span class="s7">0</span><span class="s1"> </span><span class="s5">!important</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">translateY(</span><span class="s7">-20px</span><span class="s8">)</span><span class="s1"> </span><span class="s5">!important</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">visibility:</span><span class="s1"> </span><span class="s8">hidden</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">pointer-events:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.fade-in</span><span class="s1"> {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">opacity:</span><span class="s1"> </span><span class="s7">1</span><span class="s1"> </span><span class="s5">!important</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">translateY(</span><span class="s7">0</span><span class="s8">)</span><span class="s1"> </span><span class="s5">!important</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">visibility:</span><span class="s1"> </span><span class="s8">visible</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.hidden-start</span><span class="s4"> {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">opacity:</span><span class="s1"> </span><span class="s7">0</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">translateY(</span><span class="s7">20px</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">visibility:</span><span class="s1"> </span><span class="s8">hidden</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Hiệu ứng lá rơi */</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.leaf</span><span class="s1"> {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">absolute</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">top:</span><span class="s1"> </span><span class="s7">-50px</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s7">12px</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s7">12px</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background:</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s7">179</span><span class="s1">, </span><span class="s7">212</span><span class="s1">, </span><span class="s7">160</span><span class="s1">, </span><span class="s7">0.4</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s7">0%</span><span class="s1"> </span><span class="s7">70%</span><span class="s1"> </span><span class="s7">0%</span><span class="s1"> </span><span class="s7">70%</span><span class="s1">;<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">z-index:</span><span class="s1"> </span><span class="s7">5</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">pointer-events:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s8">inset</span><span class="s1"> </span><span class="s7">0</span><span class="s1"> </span><span class="s7">0</span><span class="s1"> </span><span class="s7">4px</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s7">255</span><span class="s1">,</span><span class="s7">255</span><span class="s1">,</span><span class="s7">255</span><span class="s1">,</span><span class="s7">0.2</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">animation:</span><span class="s4"> </span><span class="s1">fall</span><span class="s4"> </span><span class="s1">linear</span><span class="s4"> </span><span class="s1">forwards</span><span class="s4">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">@keyframes</span><span class="s1"> </span><span class="s8">fall</span><span class="s1"> {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s7">0%</span><span class="s4"> { </span><span class="s2">transform:</span><span class="s4"> </span><span class="s1">translateY(</span><span class="s7">-20px</span><span class="s1">)</span><span class="s4"> </span><span class="s1">rotate(</span><span class="s7">0deg</span><span class="s1">)</span><span class="s4"> </span><span class="s1">translateX(</span><span class="s7">0</span><span class="s1">)</span><span class="s4">; </span><span class="s2">opacity:</span><span class="s4"> </span><span class="s7">0</span><span class="s4">; }</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">10%</span><span class="s1"> { </span><span class="s2">opacity:</span><span class="s1"> </span><span class="s7">1</span><span class="s1">; }</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">90%</span><span class="s1"> { </span><span class="s2">opacity:</span><span class="s1"> </span><span class="s7">1</span><span class="s1">; }</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s7">100%</span><span class="s4"> { </span><span class="s2">transform:</span><span class="s4"> </span><span class="s1">translateY(</span><span class="s7">105vh</span><span class="s1">)</span><span class="s4"> </span><span class="s1">rotate(</span><span class="s7">360deg</span><span class="s1">)</span><span class="s4"> </span><span class="s1">translateX(</span><span class="s7">50px</span><span class="s1">)</span><span class="s4">; </span><span class="s2">opacity:</span><span class="s4"> </span><span class="s7">0</span><span class="s4">; }</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-container"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"bg-img"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"overlay"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- CHỈNH SỬA LINK NHẠC Ở ĐÂY (thay link trong src="") --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">audio</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"bgMusic"</span><span class="s4"> </span><span class="s2">loop</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">source</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"birthday-jazz.mp3"</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"audio/mpeg"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">audio</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative w-full h-full flex items-center justify-center p-4"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"greeting-card"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"glass-card"</span><span class="s4"> </span><span class="s2">style</span><span class="s3">=</span><span class="s1">"opacity: 1; transform: translateY(0);"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-12 h-12 mb-6 opacity-80"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">svg</span><span class="s4"> </span><span class="s2">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s4"> </span><span class="s2">fill</span><span class="s3">=</span><span class="s1">"none"</span><span class="s4"> </span><span class="s2">stroke</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s4"> </span><span class="s2">stroke-width</span><span class="s3">=</span><span class="s1">"1"</span><span class="s4"> </span><span class="s2">stroke-linecap</span><span class="s3">=</span><span class="s1">"round"</span><span class="s4"> </span><span class="s2">stroke-linejoin</span><span class="s3">=</span><span class="s1">"round"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-green-200"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">path</span><span class="s4"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M12 22c-3.5 0-6-2.5-6-6 0-3 2-6 6-10 4 4 6 7 6 10 0 3.5-2.5 6-6 6z"</span><span class="s3">&gt;&lt;/</span><span class="s6">path</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">path</span><span class="s4"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M12 22c-1.5 0-2.5-1.5-2.5-3.5 0-2 1.5-5 2.5-7 1 2 2.5 5 2.5 7 0 2-1 3.5-2.5 3.5z"</span><span class="s3">&gt;&lt;/</span><span class="s6">path</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">path</span><span class="s4"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M6 16c-2 0-4-1.5-4-3.5 0-2.5 2-4.5 4-5.5"</span><span class="s3">&gt;&lt;/</span><span class="s6">path</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">path</span><span class="s4"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M18 16c2 0 4-1.5 4-3.5 0-2.5-2-4.5-4-5.5"</span><span class="s3">&gt;&lt;/</span><span class="s6">path</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">svg</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"uppercase tracking-[0.3em] text-xs md:text-sm font-light text-green-100 mb-3"</span><span class="s3">&gt;</span><span class="s4">Happy Birthday</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- CHỈNH SỬA TÊN CHỊ BẠN Ở ĐÂY --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h1</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"serif text-4xl md:text-5xl font-semibold mb-2 tracking-wide text-[#e8f3e2]"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>✨Chennnnnnnn✨</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">h1</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"h-px w-16 bg-gradient-to-r from-transparent via-green-300 to-transparent my-6 opacity-50"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- CHỈNH SỬA NGÀY SINH Ở ĐÂY --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-lg md:text-xl font-light tracking-widest text-green-50 mb-6"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>30.09.2026</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- CHỈNH SỬA LỜI CHÚC Ở ĐÂY --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"serif text-lg md:text-xl italic text-green-100 font-light leading-relaxed mb-8 px-4 opacity-90"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>“Surprised yet? Consider this is my very first birthday treat for you this year. The best is yet to come, get ready for more surprise!”</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- CHỈNH SỬA CHỮ TRÊN NÚT Ở ĐÂY --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"openInvitation()"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mt-4 px-8 py-3 rounded-full border border-green-200/40 text-sm tracking-widest uppercase hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-md"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>See What’s Next</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"invitation-card"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"glass-card hidden-start"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-10 h-10 mb-4 opacity-80 text-yellow-200"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">svg</span><span class="s4"> </span><span class="s2">fill</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s4"> </span><span class="s2">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s3">&gt;&lt;</span><span class="s6">path</span><span class="s4"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"</span><span class="s3">&gt;&lt;/</span><span class="s6">path</span><span class="s3">&gt;&lt;/</span><span class="s6">svg</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- CHỈNH SỬA TIÊU ĐỀ THƯ MỜI Ở ĐÂY --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"serif text-3xl font-semibold text-[#e8f3e2] mb-4 tracking-wider"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>🥂Invitationnnn🥂</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- CHỈNH SỬA NỘI DUNG THƯ MỜI Ở ĐÂY --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-sm md:text-base font-light text-green-50 mb-6 leading-relaxed"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>The surprise continues with a special dinner for you.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full bg-white/5 rounded-xl p-4 mb-6 border border-white/10 text-left space-y-3"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-sm text-green-100"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- CHỈNH SỬA THỜI GIAN HẸN Ở ĐÂY --&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"opacity-70"</span><span class="s3">&gt;</span><span class="s1">Time:</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1"> </span><span class="s3">&lt;</span><span class="s6">strong</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"tracking-wide"</span><span class="s3">&gt;</span><span class="s1">19:30 - Thu, 01.10.2026</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-sm text-green-100"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- CHỈNH SỬA ĐỊA ĐIỂM Ở ĐÂY --&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"opacity-70"</span><span class="s3">&gt;</span><span class="s1">At:</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1"> </span><span class="s3">&lt;</span><span class="s6">strong</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"tracking-wide"</span><span class="s3">&gt;</span><span class="s1">Drinking &amp; Healing</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-sm text-green-100"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- CHỈNH SỬA DRESSCODE (MÀU ÁO QUẦN) Ở ĐÂY --&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"opacity-70"</span><span class="s3">&gt;</span><span class="s1">Dresscode:</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1"> </span><span class="s3">&lt;</span><span class="s6">strong</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"tracking-wide"</span><span class="s3">&gt;</span><span class="s1">Comfy and effortlessly gorgeous!✨</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- CHỈNH SỬA LỜI NHẮN NHỦ Ở ĐÂY --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"serif text-xl italic text-green-200 mb-2"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>“See you very soon!”</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs tracking-widest text-white/50 uppercase"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>With all the best vibes, </span><span class="s3">&lt;</span><span class="s6">Br</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                            </span>From Chu Li 🎁🥳☘️</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- HIỆU ỨNG LÁ RƠI THIỀN ĐỊNH ---</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">function</span><span class="s1"> createLeaf() {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">const</span><span class="s1"> leaf = document.createElement(</span><span class="s9">'div'</span><span class="s1">);</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>leaf.classList.add(</span><span class="s9">'leaf'</span><span class="s1">);</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>leaf.style.left = </span><span class="s11">Math</span><span class="s1">.random() * </span><span class="s7">100</span><span class="s1"> + </span><span class="s9">'vw'</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">const</span><span class="s1"> duration = </span><span class="s11">Math</span><span class="s1">.random() * </span><span class="s7">8</span><span class="s1"> + </span><span class="s7">7</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>leaf.style.animationDuration = duration + </span><span class="s9">'s'</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>leaf.style.transform = </span><span class="s9">`scale(</span><span class="s1">${</span><span class="s11">Math</span><span class="s1">.random() * </span><span class="s7">0.5</span><span class="s1"> + </span><span class="s7">0.5</span><span class="s1">}</span><span class="s9">)`</span><span class="s1">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>document.body.appendChild(leaf);</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; { leaf.remove(); }, duration * </span><span class="s7">1000</span><span class="s1">);</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>setInterval(createLeaf, </span><span class="s7">800</span><span class="s1">);</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- HIỆU ỨNG PHÁO HOA CHÚC MỪNG ---</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">function</span><span class="s1"> shootFireworks() {</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s5">var</span><span class="s4"> duration = </span><span class="s7">4000</span><span class="s4">; </span><span class="s1">// Pháo hoa nổ trong 4 giây</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">var</span><span class="s1"> animationEnd = </span><span class="s11">Date</span><span class="s1">.now() + duration;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">var</span><span class="s1"> defaults = { startVelocity: </span><span class="s7">30</span><span class="s1">, spread: </span><span class="s7">360</span><span class="s1">, ticks: </span><span class="s7">60</span><span class="s1">, zIndex: </span><span class="s7">100</span><span class="s1"> };</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">function</span><span class="s1"> randomInRange(min, max) { </span><span class="s5">return</span><span class="s1"> </span><span class="s11">Math</span><span class="s1">.random() * (max - min) + min; }</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">var</span><span class="s1"> interval = setInterval(</span><span class="s5">function</span><span class="s1">() {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s5">var</span><span class="s1"> timeLeft = animationEnd - </span><span class="s11">Date</span><span class="s1">.now();</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s5">if</span><span class="s1"> (timeLeft &lt;= </span><span class="s7">0</span><span class="s1">) { </span><span class="s5">return</span><span class="s1"> clearInterval(interval); }</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s5">var</span><span class="s1"> particleCount = </span><span class="s7">40</span><span class="s1"> * (timeLeft / duration);</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">// Nổ pháo hoa từ 2 bên màn hình (màu vàng đồng và xanh lá)</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>confetti(</span><span class="s11">Object</span><span class="s1">.assign({}, defaults, {<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>particleCount,<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>origin: { x: randomInRange(</span><span class="s7">0.1</span><span class="s1">, </span><span class="s7">0.3</span><span class="s1">), y: </span><span class="s11">Math</span><span class="s1">.random() - </span><span class="s7">0.2</span><span class="s1"> },</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>colors: [</span><span class="s9">'#D4AF37'</span><span class="s1">, </span><span class="s9">'#e8f3e2'</span><span class="s1">, </span><span class="s9">'#a8e6cf'</span><span class="s1">]</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>}));</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>confetti(</span><span class="s11">Object</span><span class="s1">.assign({}, defaults, {<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>particleCount,<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>origin: { x: randomInRange(</span><span class="s7">0.7</span><span class="s1">, </span><span class="s7">0.9</span><span class="s1">), y: </span><span class="s11">Math</span><span class="s1">.random() - </span><span class="s7">0.2</span><span class="s1"> },</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>colors: [</span><span class="s9">'#D4AF37'</span><span class="s1">, </span><span class="s9">'#e8f3e2'</span><span class="s1">, </span><span class="s9">'#a8e6cf'</span><span class="s1">]</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>}));</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>}, </span><span class="s7">250</span><span class="s1">);</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- HÀNH ĐỘNG KHI BẤM NÚT "CHẠM MỞ BẤT NGỜ" ---</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">function</span><span class="s1"> openInvitation() {</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// 1. Phát nhạc</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">const</span><span class="s1"> music = document.getElementById(</span><span class="s9">'bgMusic'</span><span class="s1">);</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>music.volume = </span><span class="s7">0.5</span><span class="s1">; </span><span class="s12">// Đặt âm lượng 50%</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>music.play().</span><span class="s5">catch</span><span class="s1">(e =&gt; console.log(</span><span class="s9">"Trình duyệt chặn autoplay âm thanh."</span><span class="s1">));</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// 2. Ẩn thiệp chúc mừng cũ</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">const</span><span class="s1"> card1 = document.getElementById(</span><span class="s9">'greeting-card'</span><span class="s1">);</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s5">const</span><span class="s1"> card2 = document.getElementById(</span><span class="s9">'invitation-card'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>card1.classList.add(</span><span class="s9">'fade-out'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// 3. Hiện thiệp mời và bắn pháo hoa</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>card1.style.display = </span><span class="s9">'none'</span><span class="s1">; </span><span class="s12">// Giấu hẳn card 1</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>card2.classList.remove(</span><span class="s9">'hidden-start'</span><span class="s1">);</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>card2.classList.add(</span><span class="s9">'fade-in'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">// Nền hơi mờ đi một chút để tập trung vào thiệp mời</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById(</span><span class="s9">'bg-img'</span><span class="s1">).style.filter = </span><span class="s9">'blur(4px) brightness(0.8)'</span><span class="s1">;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s12">// Bắn pháo hoa<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>shootFireworks();</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">            </span>}, </span><span class="s7">800</span><span class="s4">); </span><span class="s1">// Đợi 0.8s cho thiệp 1 mờ dần</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+
+    <div class="bg-container" id="bg-img"></div>
+    <div class="overlay"></div>
+
+    <audio id="bgMusic" loop>
+        <source src="birthday-jazz.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="relative w-full h-full flex items-center justify-center p-4">
+        
+        <div id="greeting-card" class="glass-card" style="opacity: 1; transform: translateY(0);">
+            
+            <div class="w-12 h-12 mb-6 opacity-80">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-green-200">
+                    <path d="M12 22c-3.5 0-6-2.5-6-6 0-3 2-6 6-10 4 4 6 7 6 10 0 3.5-2.5 6-6 6z"></path>
+                    <path d="M12 22c-1.5 0-2.5-1.5-2.5-3.5 0-2 1.5-5 2.5-7 1 2 2.5 5 2.5 7 0 2-1 3.5-2.5 3.5z"></path>
+                    <path d="M6 16c-2 0-4-1.5-4-3.5 0-2.5 2-4.5 4-5.5"></path>
+                    <path d="M18 16c2 0 4-1.5 4-3.5 0-2.5-2-4.5-4-5.5"></path>
+                </svg>
+            </div>
+
+            <h3 class="uppercase tracking-[0.3em] text-xs md:text-sm font-light text-green-100 mb-3">Happy Birthday</h3>
+            
+            <h1 class="serif text-4xl md:text-5xl font-semibold mb-2 tracking-wide text-[#e8f3e2]">
+                ✨Chennnnnnnn✨
+            </h1>
+            
+            <div class="h-px w-16 bg-gradient-to-r from-transparent via-green-300 to-transparent my-6 opacity-50"></div>
+            
+            <p class="text-lg md:text-xl font-light tracking-widest text-green-50 mb-6">
+                30.09.2026
+            </p>
+
+            <p class="serif text-lg md:text-xl italic text-green-100 font-light leading-relaxed mb-8 px-4 opacity-90">
+                “Surprised yet? Consider this is my very first birthday treat for you this year. The best is yet to come, get ready for more surprise!”
+            </p>
+
+            <button onclick="openInvitation()" class="mt-4 px-8 py-3 rounded-full border border-green-200/40 text-sm tracking-widest uppercase hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-md">
+                See What’s Next
+            </button>
+        </div>
+
+        <div id="invitation-card" class="glass-card hidden-start">
+            <div class="w-10 h-10 mb-4 opacity-80 text-yellow-200">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+            </div>
+            
+            <h2 class="serif text-3xl font-semibold text-[#e8f3e2] mb-4 tracking-wider">
+                🥂Invitationnnn🥂
+            </h2>
+            
+            <p class="text-sm md:text-base font-light text-green-50 mb-6 leading-relaxed">
+                The surprise continues with a special dinner for you.
+            </p>
+
+            <div class="w-full bg-white/5 rounded-xl p-4 mb-6 border border-white/10 text-left space-y-3">
+                <p class="text-sm text-green-100">
+                    <span class="opacity-70">Time:</span> <strong class="tracking-wide">19:30 - Thu, 01.10.2026</strong>
+                </p>
+                <p class="text-sm text-green-100">
+                    <span class="opacity-70">At:</span> <strong class="tracking-wide">Drinking & Healing</strong>
+                </p>
+                <p class="text-sm text-green-100">
+                    <span class="opacity-70">Dresscode:</span> <strong class="tracking-wide">Comfy and effortlessly gorgeous!✨</strong>
+                </p>
+            </div>
+
+            <p class="serif text-xl italic text-green-200 mb-2">
+                “See you very soon!”
+            </p>
+            <p class="text-xs tracking-widest text-white/50 uppercase">
+                With all the best vibes, <br>
+                From Chu Li 🎁🥳☘️
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // --- HIỆU ỨNG LÁ RƠI THIỀN ĐỊNH ---
+        function createLeaf() {
+            const leaf = document.createElement('div');
+            leaf.classList.add('leaf');
+            leaf.style.left = Math.random() * 100 + 'vw';
+            const duration = Math.random() * 8 + 7;
+            leaf.style.animationDuration = duration + 's';
+            leaf.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+            document.body.appendChild(leaf);
+            setTimeout(() => { leaf.remove(); }, duration * 1000);
+        }
+        setInterval(createLeaf, 800);
+
+        // --- HIỆU ỨNG PHÁO HOA CHÚC MỪNG ---
+        function shootFireworks() {
+            var duration = 4000; // Pháo hoa nổ trong 4 giây
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
+
+            function randomInRange(min, max) { return Math.random() * (max - min) + min; }
+
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+                if (timeLeft <= 0) { return clearInterval(interval); }
+
+                var particleCount = 40 * (timeLeft / duration);
+                
+                // Nổ pháo hoa từ 2 bên màn hình (màu vàng đồng và xanh lá)
+                confetti(Object.assign({}, defaults, { 
+                    particleCount, 
+                    origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+                    colors: ['#D4AF37', '#e8f3e2', '#a8e6cf']
+                }));
+                confetti(Object.assign({}, defaults, { 
+                    particleCount, 
+                    origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+                    colors: ['#D4AF37', '#e8f3e2', '#a8e6cf']
+                }));
+            }, 250);
+        }
+
+        // --- HÀNH ĐỘNG KHI BẤM NÚT ---
+        function openInvitation() {
+            // 1. Phát nhạc
+            const music = document.getElementById('bgMusic');
+            music.volume = 0.5; // Đặt âm lượng 50%
+            music.play().catch(e => console.log("Trình duyệt chặn autoplay âm thanh."));
+
+            // 2. Ẩn thiệp chúc mừng cũ
+            const card1 = document.getElementById('greeting-card');
+            const card2 = document.getElementById('invitation-card');
+            
+            card1.classList.add('fade-out');
+
+            // 3. Hiện thiệp mời và bắn pháo hoa
+            setTimeout(() => {
+                card1.style.display = 'none'; // Giấu hẳn card 1
+                card2.classList.remove('hidden-start');
+                card2.classList.add('fade-in');
+                
+                // Nền hơi mờ đi một chút để tập trung vào thiệp mời
+                document.getElementById('bg-img').style.filter = 'blur(4px) brightness(0.8)';
+                
+                // Bắn pháo hoa 
+                shootFireworks();
+
+            }, 800); // Đợi 0.8s cho thiệp 1 mờ dần
+        }
+    </script>
 </body>
 </html>
